@@ -18,6 +18,8 @@ const mongoSanitize = require("express-mongo-sanitize");
 // routers
 const authRouter = require("./routes/authRoutes");
 const userRouter = require("./routes/userRoutes");
+const favouriteRouter = require("./routes/favouriteRoutes");
+const propertyRouter = require("./routes/propertyRoutes");
 
 // middleware
 const notFoundMiddleware = require("./middleware/not-found");
@@ -60,6 +62,8 @@ app.get("/api/v1", (req, res) => {
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/favourites", favouriteRouter);
+app.use("/api/v1/properties", propertyRouter);
 // app.use("/api/v1/products", productRouter);
 // app.use("/api/v1/reviews", reviewRouter);
 // app.use("/api/v1/orders", orderRouter);
